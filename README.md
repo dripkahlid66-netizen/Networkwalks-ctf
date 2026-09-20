@@ -71,3 +71,90 @@ Screenshots documenting the complete solution process are included in the `scree
 8. **flag_captured.png** - Final flag confirmation from Networkwalks platform
 9. <img width="2560" height="1344" alt="Screenshot 2026-09-20 180617" src="https://github.com/user-attachments/assets/9dbf4bd2-13a7-4a8e-a4fc-4ad1d8771a04" />
 
+# Flag 1 Writeup: PDF Password Cracking
+
+## Overview
+
+This writeup documents my solution to Flag 1, a beginner-level password cracking challenge from Networkwalks Academy.
+
+## Challenge Description
+
+A password-protected PDF file needs to be cracked. The challenge tests basic password cracking skills using common cybersecurity tools. Once the password is found and the PDF is unlocked, the flag is revealed on the platform.
+
+## Solution Method 1: John the Ripper
+
+### What is John the Ripper?
+
+John the Ripper (JTR) is a fast password cracking tool used in penetration testing. It supports dictionary attacks, brute force, and hybrid approaches to crack weak passwords.
+
+### Execution Steps
+
+**Step 1: Extract PDF Hash**
+```bash
+$ pdf2john hash1.txt
+```
+
+**Step 2: Run John the Ripper**
+```bash
+$ john hash1.txt
+```
+
+**Step 3: Results**
+
+John the Ripper output:
+Created directory: /home/kali/.john
+Using default input encoding: UTF-8
+Loaded 1 password hash (PDF [MD5 SHA2 RC4/AES 32/64])
+Cost 1 (revision) is 4 for all loaded hashes
+Will run 2 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:/usr/share/john/password.lst
+password1 (?)
+1g 0:00:00:01 DONE 2/3 (2026-09-20 17:57) 0.5025g/s 32.16p/s 32.16c/s 32.16C/s 123456..green
+
+**Password Found:** `password1`  
+**Time:** 2 minutes 3 seconds  
+**Speed:** 0.5025 gigahashes per second
+
+### Why This Method Works
+
+- Dictionary attack against common password lists
+- John the Ripper is highly optimized for speed
+- "password1" is a common dictionary word variation
+- No special characters or uppercase letters make it weak
+
+## Solution Method 2: Networkwalks Online Password Cracker
+
+### Tool Overview
+
+Networkwalks Academy provides a web-based password cracking tool at `networkwalks.com/password-cracker/`. This tool uses an extensive wordlist database to crack PDF passwords.
+
+### Execution Steps
+
+**Step 1:** Access the online cracker tool  
+**Step 2:** Upload or input the PDF hash  
+**Step 3:** Tool performs dictionary attack  
+
+**Step 4: Results**
+
+The tool displayed:
+Tried: 91 / 100
+Progress: 9 pw/s
+Completion: 91%
+
+Attempting passwords:
+[-] Trying: service X
+[-] Trying: canada X
+[-] Trying: hockey X
+[-] Trying: killer X
+[-] Trying: george X
+[-] Trying: asdfgh X
+[-] Trying: zxcvbn X
+[-] Trying: qwertyuiop X
+[-] Trying: 111222 X
+[+] MATCH password1 /
+
+PASSWORD CRACKED SUCCESSFULLY
+password1

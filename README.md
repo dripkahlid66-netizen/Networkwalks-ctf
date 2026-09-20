@@ -224,3 +224,6 @@ Flag 1 successfully captured by cracking the PDF password using two methods. The
 
 **Challenge Status:** ✓ Complete  
 **Flag:** `nw{networkwalks_flag1_jtr_270521_1}`
+
+
+Author: Dominic Joshua 

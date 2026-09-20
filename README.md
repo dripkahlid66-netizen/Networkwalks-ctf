@@ -168,3 +168,59 @@ Attempting passwords:
 PASSWORD CRACKED SUCCESSFULLY
 
 password1
+
+
+**Password Confirmed:** `password1`  
+**Attempts:** 91 out of 100  
+**Status:** SUCCESS
+
+### Why This Method Confirms Results
+
+- Independent verification using different tool
+- Same password found confirms accuracy
+- Demonstrates multiple approaches work
+- Validates password strength assessment
+
+## Flag Capture
+
+After confirming the password, I entered `password1` into the PDF file. The file unlocked successfully and revealed the congratulations page with the flag.
+
+**Flag:** `nw{networkwalks_flag1_jtr_270521_1}`
+
+### Flag Format Breakdown
+
+- `nw` = Networkwalks identifier
+- `networkwalks_flag1` = Challenge identifier
+- `jtr` = Method hint (John the Ripper)
+- `270521` = Date code
+- `1` = Sequential number
+
+## Technical Analysis
+
+### PDF Encryption Details
+
+- **Type:** MD5 SHA2 RC4/AES hybrid
+- **Key Length:** 32/64-bit
+- **Vulnerability:** Weak password makes encryption irrelevant
+
+### Password Characteristics
+
+- **Length:** 9 characters (too short)
+- **Character Set:** Lowercase + digits only
+- **Complexity:** Low (dictionary word pattern)
+- **Entropy:** Insufficient for modern security
+
+### Why Password1 Was Cracked Easily
+
+1. "password" is in every common wordlist
+2. Adding "1" is predictable pattern
+3. No uppercase or special characters
+4. No security best practices applied
+5. Both tools found it within seconds
+
+## Conclusion
+
+Flag 1 successfully captured by cracking the PDF password using two methods. The password `password1` demonstrated the importance of password complexity in cybersecurity. Both John the Ripper and the Networkwalks online tool confirmed the same result, validating the solution.
+
+**Challenge Status:** ✓ Complete  
+**Flag:** `nw{networkwalks_flag1_jtr_270521_1}`

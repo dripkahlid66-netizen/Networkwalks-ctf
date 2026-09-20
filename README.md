@@ -146,15 +146,25 @@ Completion: 91%
 
 Attempting passwords:
 [-] Trying: service X
+
 [-] Trying: canada X
+
 [-] Trying: hockey X
+
 [-] Trying: killer X
+
 [-] Trying: george X
+
 [-] Trying: asdfgh X
+
 [-] Trying: zxcvbn X
+
 [-] Trying: qwertyuiop X
+
 [-] Trying: 111222 X
+
 [+] MATCH password1 /
 
 PASSWORD CRACKED SUCCESSFULLY
+
 password1
